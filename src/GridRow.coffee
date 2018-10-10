@@ -1,6 +1,6 @@
 Element = require('spark-starter').Element
 EventEmitter = require('spark-starter').EventEmitter
-GridCell = require('../lib/GridCell')
+GridCell = require('./GridCell')
 
 class GridRow extends Element
   @extend EventEmitter
