@@ -1,4 +1,4 @@
-# Parallelio Grid
+# Parallelio Grids
 
 ## Installation
 

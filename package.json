@@ -1,5 +1,5 @@
 {
-  "name": "parallelio-grid",
+  "name": "parallelio-grids",
   "version": "0.1.0",
   "description": "Parallelio grid component",
   "main": "lib/grid.js",
