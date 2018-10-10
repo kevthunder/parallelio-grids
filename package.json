@@ -1,0 +1,23 @@
+{
+  "name": "parallelio-grid",
+  "version": "0.1.0",
+  "description": "Parallelio grid component",
+  "main": "lib/grid.js",
+  "scripts": {
+    "test": "gulp test",
+    "build": "gulp build"
+  },
+  "author": "kevthunder",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1",
+    "gulp": "^4.0",
+    "gulp-coffee": "^3.0.2",
+    "gulp-mocha": "^6.0.0",
+    "mocha": "^5.2.0",
+    "spark-wrapper": "github:kevthunder/spark-wrapper"
+  },
+  "dependencies": {
+    "spark-starter": "kevthunder/spark-starter#v0.8.x"
+  }
+}
