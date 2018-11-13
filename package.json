@@ -2,7 +2,7 @@
   "name": "parallelio-grids",
   "version": "0.1.0",
   "description": "Parallelio grid component",
-  "main": "lib/grid.js",
+  "main": "lib/grids.js",
   "scripts": {
     "test": "gulp test",
     "build": "gulp build"
