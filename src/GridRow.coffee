@@ -1,9 +1,7 @@
 Element = require('spark-starter').Element
-EventEmitter = require('spark-starter').EventEmitter
 GridCell = require('./GridCell')
 
-class GridRow extends Element
-  @extend EventEmitter
+module.exports = class GridRow extends Element
   @properties
     grid: {}
     cells:
@@ -15,18 +13,18 @@ class GridRow extends Element
           cell.row = null
     rowPosition: 
       calcul: (invalidator)->
-        grid = invalidator.prop('grid')
+        grid = invalidator.prop(@gridProperty)
         if grid
-          invalidator.prop('rows',grid).indexOf(this)
+          invalidator.prop(grid.rowsProperty).indexOf(this)
     height:
       calcul: (invalidator)->
-        1 / invalidator.prop('rows', invalidator.prop('grid')).length
+        1 / invalidator.propPath('grid.rows').length
     top:
       calcul: (invalidator)->
-        invalidator.prop('height') * invalidator.prop('rowPosition')
+        invalidator.prop(@heightProperty) * invalidator.prop(@rowPositionProperty)
     bottom:
       calcul: (invalidator)->
-        invalidator.prop('height') * (invalidator.prop('rowPosition') + 1) 
+        invalidator.prop(@heightProperty) * (invalidator.prop(@rowPositionProperty) + 1) 
   addCell: (cell = null)->
     unless cell
       cell = new GridCell()

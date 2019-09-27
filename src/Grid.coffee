@@ -1,11 +1,9 @@
 Element = require('spark-starter').Element
-EventEmitter = require('spark-starter').EventEmitter
 GridCell = require('./GridCell')
 GridRow = require('./GridRow')
 
 
-class Grid extends Element
-  @extend EventEmitter
+module.exports = class Grid extends Element
   @properties
     rows:
       collection: true
@@ -16,9 +14,9 @@ class Grid extends Element
           row.grid = null
     maxColumns: 
       calcul: (invalidator)->
-        rows = invalidator.prop('rows')
+        rows = invalidator.prop(@rowsProperty)
         rows.reduce (max, row) ->
-            Math.max(max, invalidator.prop('cells',row).length)
+            Math.max(max, invalidator.prop(row.cellsProperty).length)
           , 0
   addCell: (cell = null)->
     unless cell

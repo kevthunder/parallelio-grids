@@ -1,33 +1,31 @@
 Element = require('spark-starter').Element
-EventEmitter = require('spark-starter').EventEmitter
 
-class GridCell extends Element
-  @extend EventEmitter
+module.exports = class GridCell extends Element
   @properties
     grid: 
       calcul: (invalidator)->
-        invalidator.prop('grid',invalidator.prop('row'))
+        invalidator.propPath('grid.row')
     row: {}
     columnPosition: 
       calcul: (invalidator)->
-        row = invalidator.prop('row')
+        row = invalidator.prop(@rowProperty)
         if row
-          invalidator.prop('cells',row).indexOf(this)
+          invalidator.prop(row.cellsProperty).indexOf(this)
     width:
       calcul: (invalidator)->
-        1 / invalidator.prop('cells', invalidator.prop('row')).length
+        1 / invalidator.propPath('row.cells').length
     left:
       calcul: (invalidator)->
-        invalidator.prop('width') * invalidator.prop('columnPosition')
+        invalidator.prop(@widthProperty) * invalidator.prop(@columnPositionProperty)
     right:
       calcul: (invalidator)->
-        invalidator.prop('width') * (invalidator.prop('columnPosition') + 1) 
+        invalidator.prop(@widthProperty) * (invalidator.prop(@columnPositionProperty) + 1) 
     height:
       calcul: (invalidator)->
-        invalidator.prop('height', invalidator.prop('row'))
+        invalidator.propPath('row.height')
     top:
       calcul: (invalidator)->
-        invalidator.prop('top', invalidator.prop('row'))
+        invalidator.propPath('row.top')
     bottom:
       calcul: (invalidator)->
-        invalidator.prop('bottom', invalidator.prop('row'))
+        invalidator.propPath('row.bottom')

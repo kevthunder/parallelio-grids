@@ -14,10 +14,10 @@
     "gulp": "^4.0",
     "gulp-coffee": "^3.0.2",
     "gulp-mocha": "^6.0.0",
-    "mocha": "^5.2.0",
-    "spark-wrapper": "github:kevthunder/spark-wrapper"
+    "gulp-require-index": "^0.1.1",
+    "mocha": "^5.2.0"
   },
   "dependencies": {
-    "spark-starter": "kevthunder/spark-starter#v0.8.x"
+    "spark-starter": "kevthunder/spark-starter#use-spark-properties"
   }
 }
