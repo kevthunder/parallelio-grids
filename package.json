@@ -18,6 +18,6 @@
     "mocha": "^5.2.0"
   },
   "dependencies": {
-    "spark-starter": "kevthunder/spark-starter#use-spark-properties"
+    "spark-starter": "kevthunder/spark-starter#v0.11.x"
   }
 }
